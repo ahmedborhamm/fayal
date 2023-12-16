@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<link rel="stylesheet" href="owl.carousel.min.css">
+<link rel="stylesheet" href="owl.theme.default.min.css">
+<link rel="stylesheet" href="./bootstrap.css">
+<link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+  <title>فيال العقاريه </title>
+  <style>
+    body{
+      background-color: rgba(0, 0, 0, 0.88) ;        
+    }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }  
+  a:hover{
+    color: white;
+  }
+.wrapper__header {
+  position: fixed;
+  bottom: 70px;
+  left: 50px;
+  z-index: 1111;
+}
+@media (max-width: 768px) {
+  .wrapper__header {
+    max-width: 100%;
+  }
+}
+.wrapper__header h1 {
+  text-align: center;
+}
+.wrapper__header p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.wrapper__header ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.wrapper__header ul li {
+  margin: 15px 0;
+}
+
+
+
+.menu {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 100%;
+}
+.menu.active .menu__list {
+  opacity: 1;
+  visibility: visible;
+  visibility: visible;
+  transform: scale(1);
+  transition: transform 0.3s, visibility 0s 0s;
+}
+.menu.active .menu__list li a {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 1;
+}
+.menu.active .menu__list li:nth-child(1) a {
+  transition-delay: 0s;
+}
+.menu.active .menu__list li:nth-child(2) a {
+  transition-delay: 0.2s;
+}
+.menu.active .menu__list li:nth-child(3) a {
+  transition-delay: 0.4s;
+}
+.menu.active .menu__list li:nth-child(4) a {
+  transition-delay: 0.6s;
+}
+.menu.active .menu__list li:nth-child(5) a {
+  transition-delay: 0.8s;
+}
+.menu.active .menu__list li:nth-child(6) a {
+  transition-delay: 1s;
+}
+.menu.active .menu__list li:nth-child(7) a {
+  transition-delay: 1.2s;
+}
+.menu.active .menu__list li:nth-child(8) a {
+  transition-delay: 1.4s;
+}
+.menu.active .menu__list li:nth-child(9) a {
+  transition-delay: 1.6s;
+}
+.menu.active .menu__list li:nth-child(10) a {
+  transition-delay: 1.8s;
+}
+.menu .menu__btn {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  background: linear-gradient(0deg, #1609f0 0%, #316ef4 100%);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+}
+.menu .menu__btn i {
+  color: #fff;
+}
+.menu .menu__list {
+  list-style: none;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  margin-top: 0;
+  width: 130px;
+  margin-bottom: 0;
+  padding: 5px 0;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.3s, visibility 0s 0s;
+  background: rgb(14, 138, 14);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+}
+.menu .menu__list li {
+  display: flex;
+  align-items: center;
+}
+.menu .menu__list li a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 15px 25px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0;
+}
+.menu .menu__list li a:hover {
+  color: rgba(233, 233, 233, 0.75);
+  transition: 0.25s !important;
+  transition-delay: 0s;
+}
+
+.menu.menu--center-center {
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  margin: 0 auto;
+}
+.menu.menu--center-center.active .menu__list {
+  transform: scale(1) translate(-50%, -50%);
+}
+.menu.menu--center-center.active .menu__list li a {
+  transform: translateY(0);
+}
+.menu.menu--center-center .menu__btn {
+  background: rgb(14, 138, 14);
+}
+.menu.menu--center-center .menu__list {
+    position: absolute;
+    top: -145px;
+    left: 128%;
+    transform: scale(0) translate(-50%, -50%);
+}
+.menu.menu--center-center .menu__list li a {
+  text-align: center;
+  transform: translateY(-10px);
+    font-size: 15px !important;
+
+}
+
+.menu.menu--top-left {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  text-align: left;
+}
+.menu.menu--top-left.active .menu__list {
+  transform: scale(1);
+}
+.menu.menu--top-left.active .menu__list li a {
+  transform: translateX(0);
+}
+.menu.menu--top-left .menu__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+}
+.menu.menu--top-left .menu__list li a {
+  transform: translateX(-10px);
+}
+
+.menu.menu--bottom-left {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+.menu.menu--bottom-left.active .menu__list {
+  transform: scale(1);
+}
+.menu.menu--bottom-left.active .menu__list li a {
+  transform: translateX(0);
+}
+.menu.menu--bottom-left .menu__btn {
+  
+}
+.menu.menu--bottom-left .menu__list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+    border-radius: 20px;
+
+}
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background-color:green;
+    border-radius: 20px;
+
+}
+
+    .imgg{
+      transition: all 0.3s ease-in-out;
+      border: 4px solid rgb(255, 255, 255);
+      border-radius: 5px;
+      height: 400px;
+    }
+
+    .owl-carousel img{
+       transition: all 0.3s ease-in-out;
+      border: 4px solid rgb(255, 255, 255);
+      border-radius: 5px;
+      height: 250px;
+    }
+      .gallery-container {
+                    overflow: hidden;
+                    object-fit: cover;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .gallery-item {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border: 3px solid white;
+            border-radius: 5px;
+        }
+
+.close-button {
+    position: absolute;
+    top: 10px;
+     right: 10px;
+     font-weight: bold;
+    font-size: 33px;
+    color: black;
+    cursor: pointer;
+    background: white;
+    border-radius: 32px;
+    width: 40px;
+    height: 55px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+        }
+
+
+  .close-button:hover{
+    background-color: black;
+    color: white;
+  }      
+
+    #auto-text {
+            font-size: 35px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+            color: whitesmoke;
+            border-bottom: 5px solid rgba(14, 138, 14, 0.306);
+            padding: 5px;
+            border-radius: 15%;
+        }
+
+       
+  .owl-nav button {
+    background-color: rgba(14, 138, 14, 0.306) !important;
+    width: 50px;
+    height: 50px;
+  }   
+  .owl-nav button span{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }      
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+      <div id="auto-text" class="mt-3"></div>
+
+  </div>
+
+      <div class="wrapper__header">
+
+<div class="wrapper__content">
+  <div class="wrapMenu">
+    <div class="menu menu--center-center" id="menu_center_center">
+      <a class="menu__btn" dd-nav-expand="menu_center_center"> تواصل معنا </a>
+      <ul class="menu__list">
+        <li> <a href="https://wa.me/+966536069398">عبر واتس اب    </a> </li>
+        <li> <a href="mailto: ahmedborham289@gmail.com"> عبر الايميل </a> </li>
+        <li> <a href="tel:0536069398"> عبر الجوال </a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0015.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0015.jpg" >
+    </div> 
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0016.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0016.jpg" >
+    </div> 
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0017.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0017.jpg" >
+    </div> 
+      </div>
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0018.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0018.jpg" >
+    </div> 
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0019.jpg')">
+        <img class="w-100 imgg " src="images/IMG-20231214-WA0019.jpg" >
+    </div> 
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0020.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0020.jpg" >
+    </div> 
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0021.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0021.jpg" >
+    </div> 
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0022.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0022.jpg" >
+    </div> 
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+         <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0023.jpg')">
+        <img class="w-100 imgg" src="images/IMG-20231214-WA0023.jpg" >
+    </div> 
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="owl-carousel owl-theme">
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0023.jpg')">
+        <img src="images/IMG-20231214-WA0023.jpg" alt="Image 2">
+    </div> 
+  </div>
+
+
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0024.jpg')">
+        <img src="images/IMG-20231214-WA0024.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0025.jpg')">
+        <img src="images/IMG-20231214-WA0025.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0026.jpg')">
+        <img src="images/IMG-20231214-WA0026.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0027.jpg')">
+        <img src="images/IMG-20231214-WA0027.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0028.jpg')">
+        <img src="images/IMG-20231214-WA0028.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0029.jpg')">
+        <img src="images/IMG-20231214-WA0029.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0030.jpg')">
+        <img src="images/IMG-20231214-WA0030.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0031.jpg')">
+        <img src="images/IMG-20231214-WA0031.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0032.jpg')">
+        <img src="images/IMG-20231214-WA0032.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0033.jpg')">
+        <img src="images/IMG-20231214-WA0033.jpg" alt="Image 2">
+    </div> 
+  </div>
+  
+  
+    <div class="item">
+        <div class="gallery-item" onclick="openLightbox('images/IMG-20231214-WA0034.jpg')">
+        <img src="images/IMG-20231214-WA0034.jpg" alt="Image 2">
+    </div> 
+  </div></div>
+  </div>
+
+
+
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="close-button" onclick="closeLightbox()">&times;</span>
+    <img src="" alt="Large Image" id="lightbox-image">
+</div> 
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><script src="owlcarousel/owl.carousel.min.js"></script>
+  <script src="./owl.carousel.min.js"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+          autoplay:true,
+    smartSpeed:1000,
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+
+ function openLightbox(imageSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+
+        lightboxImage.src = imageSrc;
+        lightbox.style.display = 'flex';
+        lightboxImage.style.width = "70%"
+        lightboxImage.style.height = "100%"
+
+        
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+    }
+
+    // Get all the dropdown from document
+document.querySelectorAll(".menu__btn").forEach(dropDownFunc);
+
+// Dropdown Open and Close function
+function dropDownFunc(dropDown) {
+  if (dropDown.classList.contains("menu__btn") === true) {
+    dropDown.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (this.nextElementSibling.classList.contains("active") === true) {
+        // Close the clicked dropdown
+        this.parentElement.classList.remove("active");
+      } else {
+        // Close the opend dropdown
+        closeDropdown();
+        // add the open and active class(Opening the DropDown)
+        this.parentElement.classList.add("active");
+      }
+    });
+  }
+}
+
+// Listen to the doc click
+window.addEventListener("click", function (e) {
+  // Close the menu if click happen outside menu
+  if (e.target.closest(".menu") === null) {
+    // Close the opend dropdown
+    closeDropdown();
+  }
+});
+
+// Click for Mobile
+window.addEventListener("touchstart", function (e) {
+  // Close the menu if click happen outside menu
+  if (e.target.closest(".menu") === null) {
+    // Close the opend dropdown
+    closeDropdown();
+  }
+});
+
+// Close the openend Dropdowns
+function closeDropdown() {
+  // remove the open and active class from other opened Dropdown (Closing the opend DropDown)
+  document.querySelectorAll(".menu").forEach(function (container) {
+    container.classList.remove("active");
+  });
+}
+
+
+
+// tittle
+
+ const textToType = "   بعض من اعمال شركه فيال العقاريه" ;
+    const speed = 50; // typing speed in milliseconds
+    let index = 0;
+
+    function typeText() {
+        const autoTextElement = document.getElementById('auto-text');
+        autoTextElement.innerHTML += textToType.charAt(index);
+        index++;
+
+        if (index < textToType.length) {
+            setTimeout(typeText, speed);
+        }
+
+    }
+
+    // Start typing when the page loads
+    window.onload = function () {
+        typeText();
+    };
+  </script>
+</body>
+</html>
